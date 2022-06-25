@@ -7,12 +7,14 @@
   --footer-bg-color: #2f303a;
   --page-header-border: #ececec;
   --primary-footer-tel: rgba(255, 255, 255, 0.6);
-  --color-section-team: #f5f4fa;
+  --section-team-color: #f5f4fa;
   --border-portfolio-item-color: #eeeeee;
   --icon-color:#AFB1B8;
+  --footer-icon-bg:#44454E;
   --shadow-team-container: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   --shadow-hero-btn: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  --shadow-footer-icon: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 body {
@@ -111,36 +113,35 @@ header {
 .site-nav .link.current {
   color: var(--accent-color);
 }
-.contact {
+ .contact {
   display: flex;
   margin-left: auto;
+  align-items:center;
 }
-.contact .item:not(:last-child) {
+.contact .contact-item:not(:last-child) {
   margin-right: 50px;
 }
 
-.contact .link {
+.contact-item .contact-mail,
+.contact-item .contact-tel {
+  display: flex;
+  align-items: center;
   color: var(--text-color);
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-}
-.contact .link:hover,
-.contact .link:focus {
-  color: var(--accent-color);
-}
-.contact .item-icon{
-  display: inline-flex;
-  margin-right: 10px;
-  align-items:center;
-}
-.contact .item-icon{
   fill: currentColor;
 }
-
-
+.contact-item .link:hover,
+.contact-item .link:focus {
+  color: var(--accent-color);
+}
+.contact-item .item-icon{
+  display: inline-flex;
+  margin-right: 10px;
+} 
 
 
 /* Main */
@@ -160,7 +161,7 @@ header {
 
 /* Hero */
 .hero {
-    background-image:linear-gradient(
+  background-image:linear-gradient(
     to right,
     rgba(47, 48, 58, 0.4),
     rgba(47, 48, 58, 0.4)), 
@@ -177,7 +178,6 @@ header {
   text-align: center;
   padding: 200px 0px;
 }
-.hero-conteiner
 
 .hero-title {
   color: var(--primary-white-color);
@@ -248,7 +248,7 @@ header {
   padding-bottom: 47px;
 }
 
-/* What we do */
+/* Our works */
 .work {
   display: flex;
 }
@@ -314,13 +314,12 @@ gap:10px;
 .socials .socials-link:hover,
 .socials .socials-link:focus
 {
-  fill: var(--color-section-team);
+  fill: var(--section-team-color);
   
   border-radius: 50%;
   background-position: center;
   background-color:var(--accent-color);
 }
-
 
 /* Regular customers  */
 .customers-container{
@@ -328,7 +327,6 @@ gap:10px;
   justify-content: space-between;
   align-items: center;
   gap:30px;
-  
 }
 .customers-container .item{
   width: 170px;
@@ -347,18 +345,23 @@ gap:10px;
 }
 
 /* Footer */
-.footer .container{
+.footer {
   display: flex;
-  justify-content: center;
+  
 }
-footer {
-  background-color: var(--footer-bg-color);
+
+.footer-contacs{
+  display: flex;
+  flex-direction: column;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
   padding: 60px 0px;
-}
+} 
+footer {
+  background-color: var(--footer-bg-color);}
+
 footer .second-part-logo {
   color: var(--primary-white-color);
 }
@@ -376,10 +379,6 @@ footer .tel:hover,
 footer .tel:focus {
   color: var(--accent-color);
 }
-.address {
-  display: flex;
-  flex-direction: column;
-}
 .address .item:not(:last-child) {
   padding-bottom: 9px;
 }
@@ -389,22 +388,51 @@ footer .tel:focus {
 .address .item {
   font-style: normal;
 }
-/* .footer-contacs{
+.footer-contacs{
   display: flex;
-} */
-/* .footer-socials{
+}
+.footer-socials{
   display: flex;
-} */
-
-/* .footer-socials p{
-font-style: normal;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 70px;
+  padding-top: 72px;
+}
+.footer-socials .join{
 font-weight: 700;
 font-size: 14px;
 line-height: 1.14px;
 text-transform: uppercase;
 color:var(--primary-white-color);
-} */
-
+margin-bottom: 20px;
+}
+.footer-socials .socials{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:10px;
+}
+.socials .join-socials-link{
+    display: inline-flex;
+    fill: var(--primary-white-color);
+    width: 44px;
+    height: 44px;
+    padding: 12px;
+    border-radius: 50%;
+    background-position: center;
+    background-color:var(--footer-icon-bg);
+    
+   }
+.socials .join-socials-link:hover,
+.socials .join-socials-link:focus
+  {
+    fill: var(--section-team-color);
+    border-radius: 50%;
+    background-position: center;
+    background-color:var(--accent-color);
+    box-shadow: var(--shadow-footer-icon);
+  }
+  
 /* Portfolio - page */
 
 /* Filter */
