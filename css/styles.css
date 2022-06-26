@@ -195,6 +195,7 @@ header {
 /* Features */
 .feature {
   display: flex;
+  align-items: center;
 }
 /* .features-container .item-icon{
   display: flex;
